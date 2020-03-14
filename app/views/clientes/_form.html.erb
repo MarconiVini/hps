@@ -12,28 +12,58 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :nome %>
-    <%= form.text_field :nome, id: :cliente_nome %>
+    <%= form.label :cnpj %>
+    <%= form.text_field :cnpj, id: :cliente_cnpj %>
   </div>
 
   <div class="field">
-    <%= form.label :cpf %>
-    <%= form.text_field :cpf, id: :cliente_cpf %>
+    <%= form.label :razao_social %>
+    <%= form.text_field :razao_social, id: :cliente_razao_social %>
   </div>
 
   <div class="field">
-    <%= form.label :telefone %>
-    <%= form.text_field :telefone, id: :cliente_telefone %>
+    <%= form.label :fantasia %>
+    <%= form.text_field :fantasia, id: :cliente_fantasia %>
   </div>
 
   <div class="field">
-    <%= form.label :endereco %>
-    <%= form.text_field :endereco, id: :cliente_endereco %>
+    <%= form.label :estado %>
+    <%= form.text_field :estado, id: :cliente_estado %>
   </div>
 
   <div class="field">
-    <%= form.label :veiculo_id %>
-    <%= form.number_field :veiculo_id, id: :cliente_veiculo_id %>
+    <%= form.label :cep %>
+    <%= form.text_field :cep, id: :cliente_cep %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fone1 %>
+    <%= form.text_field :fone1, id: :cliente_fone1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fone2 %>
+    <%= form.text_field :fone2, id: :cliente_fone2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :cliente_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ativo %>
+    <%= form.check_box :ativo, id: :cliente_ativo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :plano_id %>
+    <%= form.number_field :plano_id, id: :cliente_plano_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :convenio_id %>
+    <%= form.number_field :convenio_id, id: :cliente_convenio_id %>
   </div>
 
   <div class="actions">

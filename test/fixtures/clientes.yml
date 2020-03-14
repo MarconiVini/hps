@@ -1,15 +1,27 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  nome: MyString
-  cpf: MyString
-  telefone: MyString
-  endereco: MyString
-  veiculo_id: 1
+  cnpj: MyString
+  razao_social: MyString
+  fantasia: MyString
+  estado: MyString
+  cep: MyString
+  fone1: MyString
+  fone2: MyString
+  email: MyString
+  ativo: false
+  plano_id: 1
+  convenio_id: 1
 
 two:
-  nome: MyString
-  cpf: MyString
-  telefone: MyString
-  endereco: MyString
-  veiculo_id: 1
+  cnpj: MyString
+  razao_social: MyString
+  fantasia: MyString
+  estado: MyString
+  cep: MyString
+  fone1: MyString
+  fone2: MyString
+  email: MyString
+  ativo: false
+  plano_id: 1
+  convenio_id: 1
