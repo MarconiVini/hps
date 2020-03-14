@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200314144457) do
+ActiveRecord::Schema.define(version: 20200314151233) do
 
   create_table "clientes", force: :cascade do |t|
     t.string "cnpj"
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(version: 20200314144457) do
     t.boolean "ativo"
     t.integer "plano_id"
     t.integer "convenio_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["plano_id"], name: "index_clientes_on_plano_id"
+  end
+
+  create_table "planos", force: :cascade do |t|
+    t.text "descricao"
+    t.decimal "valor"
+    t.boolean "ativo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

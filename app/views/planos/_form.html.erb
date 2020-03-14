@@ -1,0 +1,32 @@
+<%= form_with(model: plano, local: true) do |form| %>
+  <% if plano.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(plano.errors.count, "error") %> prohibited this plano from being saved:</h2>
+
+      <ul>
+      <% plano.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :descricao %>
+    <%= form.text_area :descricao, id: :plano_descricao %>
+  </div>
+
+  <div class="field">
+    <%= form.label :valor %>
+    <%= form.text_field :valor, id: :plano_valor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ativo %>
+    <%= form.check_box :ativo, id: :plano_ativo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

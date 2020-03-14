@@ -5,6 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'pry'
+
+plano = Plano.new({descricao: "novo plano", ativo:true, valor:20.3})
+plano.save
 
 cliente = Cliente.new({
   cnpj: '383838383',
@@ -15,10 +19,10 @@ cliente = Cliente.new({
   fone1: '19-92929393',
   fone2: '19-88384884',
   email: 'cardosounicamp@gmail.com',
-  ativo: true,
-  plano_id: 1,
-  convenio_id: 2
+  ativo: true
 })
+
+cliente.plano = plano
 
 cliente.save
 
@@ -31,9 +35,9 @@ cliente1 = Cliente.new({
   fone1: '38-92929393',
   fone2: '38-88384884',
   email: 'felipe.verza@gmail.com',
-  ativo: true,
-  plano_id: 3,
-  convenio_id: 10
+  ativo: true
 })
+
+cliente1.plano = plano
 
 cliente1.save

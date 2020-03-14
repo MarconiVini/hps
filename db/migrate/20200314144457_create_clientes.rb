@@ -10,7 +10,7 @@ class CreateClientes < ActiveRecord::Migration[5.1]
       t.string :fone2
       t.string :email
       t.boolean :ativo
-      t.integer :plano_id
+      t.belongs_to :plano
       t.integer :convenio_id
 
       t.timestamps
