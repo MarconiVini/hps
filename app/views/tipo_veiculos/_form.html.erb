@@ -11,12 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :tipo %>
-    <%= form.text_field :tipo, id: :tipo_veiculo_tipo %>
-  </div>
+  <div class="card">
+  <h5 class="card-header">Dados do Veiculo</h5>
+    <div class="card-body">
+      <form class="needs-validation" novalidate>
+        <div class="form-group">
+          <%= form.label :tipo %>
+          <%= form.text_field :tipo, id: :tipo_veiculo_tipo, class: 'form-control form-control-sm', required: true, type: 'text'  %>
+        </div>
 
-  <div class="actions">
-    <%= form.submit %>
+        <div class="actions form-group">
+          <%= form.submit %>
+        </div>
+      </form>
+    </div>
   </div>
 <% end %>

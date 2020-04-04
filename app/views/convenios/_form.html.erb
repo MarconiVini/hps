@@ -1,62 +1,74 @@
 <%= form_with(model: convenio, local: true) do |form| %>
   <% if convenio.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(convenio.errors.count, "error") %> prohibited this convenio from being saved:</h2>
+  <div id="error_explanation">
+  <h2><%= pluralize(convenio.errors.count, "error") %> prohibited this convenio from being saved:</h2>
+  
+  <ul>
+  <% convenio.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+    </ul>
+    </div>
+    <% end %>
+    
+    <div class="card">
+    <h5 class="card-header">Dados do convenio</h5>
+      <div class="card-body">
+        <form class="needs-validation" novalidate>
+          <div class="form-row">      
+            <div class="form-group col-md-3 mb-3">
+            <%= form.label :cnpj %>
+            <%= form.text_field :cnpj, id: :convenio_cnpj, class: 'form-control form-control-sm', required: true, type: 'text' %>
+            </div>
 
-      <ul>
-      <% convenio.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+            <div class="form-group col-md-5 mb-3">
+            <%= form.label :razao_social %>
+            <%= form.text_field :razao_social, id: :convenio_razao_social, class: 'form-control form-control-sm', required: true, type: 'text' %>
+            </div>
+
+            <div class="form-group col-md-4 mb-3">
+            <%= form.label :fantasia %>
+            <%= form.text_field :fantasia, id: :convenio_fantasia, class: 'form-control form-control-sm', required: true, type: 'text' %>
+            </div>
+          </div>
+          <div class="form-row">  
+            <div class="form-group col-md-1 mb-3">
+            <%= form.label :estado %>
+            <%= form.text_field :estado, id: :convenio_estado, class: 'form-control form-control-sm', required: true, type: 'text' %>
+            </div>
+
+            <div class="form-group col-md-2 mb-3">
+            <%= form.label :cep %>
+            <%= form.text_field :cep, id: :convenio_cep, class: 'form-control form-control-sm', required: true, type: 'text' %>
+            </div>
+
+            <div class="form-group col-md-5 mb-3">
+            <%= form.label :email %>
+            <%= form.text_field :email, id: :convenio_emai, class: 'form-control form-control-sm', type:'email', placeholder: 'nome@exemplo.com' %>
+            </div>
+
+            <div class="form-group col-md-2 mb-3">
+            <%= form.label :fone1 %>
+            <%= form.text_field :fone1, id: :convenio_fone1, class: 'form-control form-control-sm', type: 'text' %>
+            </div>
+
+            <div class="form-group col-md-2 mb-3">
+            <%= form.label :fone2 %>
+            <%= form.text_field :fone2, id: :convenio_fone2, class: 'form-control form-control-sm', type: 'text' %>
+            </div>
+            </div>
+
+            <div class="form-check">
+            <%= form.check_box :ativo, id: :convenio_ativo, class: 'form-check-input' %>
+            <%= form.label :ativo, class: 'form-check-label' %>
+            </div>
+          </div>
+
+            <div class="actions form-group">
+            <%= form.submit %>
+            </div>
+        </form>
+      </div>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :cnpj %>
-    <%= form.text_field :cnpj, id: :convenio_cnpj %>
-  </div>
-
-  <div class="field">
-    <%= form.label :razao_social %>
-    <%= form.text_field :razao_social, id: :convenio_razao_social %>
-  </div>
-
-  <div class="field">
-    <%= form.label :fantasia %>
-    <%= form.text_field :fantasia, id: :convenio_fantasia %>
-  </div>
-
-  <div class="field">
-    <%= form.label :estado %>
-    <%= form.text_field :estado, id: :convenio_estado %>
-  </div>
-
-  <div class="field">
-    <%= form.label :cep %>
-    <%= form.text_field :cep, id: :convenio_cep %>
-  </div>
-
-  <div class="field">
-    <%= form.label :fone1 %>
-    <%= form.text_field :fone1, id: :convenio_fone1 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :fone2 %>
-    <%= form.text_field :fone2, id: :convenio_fone2 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, id: :convenio_email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :ativo %>
-    <%= form.check_box :ativo, id: :convenio_ativo %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+      

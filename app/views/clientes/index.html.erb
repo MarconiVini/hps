@@ -17,14 +17,14 @@
       <th scope="col">Ativo</th>
       <th scope="col">Plano</th>
       <th scope="col">Convenio</th>
-      <th scope="col" colspan="3">ações</th>
+      <th scope="col" colspan="3">Ações</th>
     </tr>
   </thead>
   <tbody>
     <% @clientes.each do |cliente| %>
     <tr>
       <th scope="row"><%= cliente.id %></th>
-      <td> <span>CPNJ:</span><%= cliente.cnpj %></td>
+      <td><%= cliente.cnpj %></td>
       <td><%= cliente.razao_social %></td>
       <td><%= cliente.fantasia %></td>
       <td><%= cliente.estado %></td>
