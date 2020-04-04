@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200314151233) do
+ActiveRecord::Schema.define(version: 20200326225849) do
 
   create_table "clientes", force: :cascade do |t|
     t.string "cnpj"
@@ -29,10 +29,37 @@ ActiveRecord::Schema.define(version: 20200314151233) do
     t.index ["plano_id"], name: "index_clientes_on_plano_id"
   end
 
+  create_table "convenios", force: :cascade do |t|
+    t.string "cnpj"
+    t.string "razao_social", limit: 15
+    t.string "fantasia", limit: 50
+    t.string "estado", limit: 2
+    t.string "cep", limit: 8
+    t.string "fone1", limit: 12
+    t.string "fone2", limit: 12
+    t.string "email", limit: 120
+    t.boolean "ativo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "planos", force: :cascade do |t|
     t.text "descricao"
     t.decimal "valor"
     t.boolean "ativo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tipo_veiculos", force: :cascade do |t|
+    t.string "tipo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "vagas", force: :cascade do |t|
+    t.string "quadra", limit: 10
+    t.string "tipo", limit: 15
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
