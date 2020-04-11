@@ -30,7 +30,7 @@ rails s
 ```
 
 
-Para configurar o git, rode estes comandos.
+Para configurar o git, rode os seguintes comandos:
 
 ```
 git config --global user.name "Emma Paris"
