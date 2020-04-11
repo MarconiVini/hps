@@ -38,3 +38,31 @@ git config --global user.name "Emma Paris"
 ```
 git config --global user.email "eparis@atlassian.com"
 ```
+
+Passos para subir as alterações para o repositorio:
+
+1o - Pegar alterações do servidor
+```
+git pull origin master --rebase
+```
+2o - Fazer as alterações nos arquivos
+
+3o - Rodar o git add 
+```
+git add .
+```
+4o - Associar a suas alterações à uma mensagem
+```
+git commit -m "escrever a mensagem aqui"
+```
+5o - Garantir que não tem nenhuma alteração no servidor novamente
+```
+git pull origin master --rebase
+```
+6o - Subir as alterações para o servidor
+```
+git push origin master
+```
+
+
+
