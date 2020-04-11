@@ -30,5 +30,11 @@ rails s
 ```
 
 
+Para configurar o git, rode estes comandos.
 
-
+```
+git config --global user.name "Emma Paris"
+```
+```
+git config --global user.email "eparis@atlassian.com"
+```
