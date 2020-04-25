@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cargos_codcargo: 1
+  nome: MyString
+  senha: MyString
+
+two:
+  cargos_codcargo: 1
+  nome: MyString
+  senha: MyString

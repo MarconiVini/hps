@@ -18,6 +18,11 @@ Rodar no terminal:
 ```
 bundle install
 ```
+Quando acontecer algum erro envolvendo o JavaScript runtime, deve ser instalado o NodeJS
+
+```
+sudo apt-get install nodejs
+```
 
 ```
 rails db:migrate db:seed

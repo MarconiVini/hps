@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200326225849) do
+ActiveRecord::Schema.define(version: 20200424220033) do
+
+  create_table "cargos", force: :cascade do |t|
+    t.string "desc_cargo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "clientes", force: :cascade do |t|
     t.string "cnpj"
@@ -43,6 +49,29 @@ ActiveRecord::Schema.define(version: 20200326225849) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "estadia", force: :cascade do |t|
+    t.integer "vagas_codvaga"
+    t.integer "loja_codestab"
+    t.integer "usuarios_id"
+    t.integer "veiculos_codveic"
+    t.integer "clientes_codclie"
+    t.date "data_entrada"
+    t.date "data_saida"
+    t.decimal "valor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lojas", force: :cascade do |t|
+    t.string "cnpj"
+    t.string "razao_social"
+    t.string "fantasia"
+    t.string "estado"
+    t.string "cep"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "planos", force: :cascade do |t|
     t.text "descricao"
     t.decimal "valor"
@@ -57,9 +86,27 @@ ActiveRecord::Schema.define(version: 20200326225849) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "usuarios", force: :cascade do |t|
+    t.integer "cargos_codcargo"
+    t.string "nome"
+    t.string "senha"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "vagas", force: :cascade do |t|
     t.string "quadra", limit: 10
     t.string "tipo", limit: 15
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "veiculos", force: :cascade do |t|
+    t.integer "tipoveiculo_codtipoveiculo"
+    t.string "placa"
+    t.string "modelo"
+    t.string "marca"
+    t.string "cor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

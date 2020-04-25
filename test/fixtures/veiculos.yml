@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tipoveiculo_codtipoveiculo: 1
+  placa: MyString
+  modelo: MyString
+  marca: MyString
+  cor: MyString
+
+two:
+  tipoveiculo_codtipoveiculo: 1
+  placa: MyString
+  modelo: MyString
+  marca: MyString
+  cor: MyString

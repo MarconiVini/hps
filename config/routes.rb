@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  resources :lojas
+  resources :estadia
+  resources :cargos
+  resources :usuarios
+  resources :veiculos
   resources :vagas
   resources :convenios
   resources :tipo_veiculos

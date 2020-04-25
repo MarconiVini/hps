@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cnpj:</strong>
+  <%= @loja.cnpj %>
+</p>
+
+<p>
+  <strong>Razao social:</strong>
+  <%= @loja.razao_social %>
+</p>
+
+<p>
+  <strong>Fantasia:</strong>
+  <%= @loja.fantasia %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @loja.estado %>
+</p>
+
+<p>
+  <strong>Cep:</strong>
+  <%= @loja.cep %>
+</p>
+
+<%= link_to 'Edit', edit_loja_path(@loja) %> |
+<%= link_to 'Back', lojas_path %>

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vagas_codvaga: 1
+  loja_codestab: 1
+  usuarios_id: 1
+  veiculos_codveic: 1
+  clientes_codclie: 1
+  data_entrada: 2020-04-24
+  data_saida: 2020-04-24
+  valor: 9.99
+
+two:
+  vagas_codvaga: 1
+  loja_codestab: 1
+  usuarios_id: 1
+  veiculos_codveic: 1
+  clientes_codclie: 1
+  data_entrada: 2020-04-24
+  data_saida: 2020-04-24
+  valor: 9.99

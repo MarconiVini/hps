@@ -1,0 +1,2 @@
+module EstadiaHelper
+end
