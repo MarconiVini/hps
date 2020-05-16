@@ -1,46 +1,128 @@
-<p id="notice"><%= notice %></p>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary mt-4">
+        <div class="container">
+          <a class="navbar-brand" href="javascript:;">HPS Sistemas / Clientes</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-primary" aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbar-primary">
+            <div class="navbar-collapse-header">
+              <div class="row">
+                <div class="col-6 collapse-brand">
+                  <a href="./index.html">
+                    <img src="./assets/img/brand/blue.png">
+                  </a>
+                </div>
+                <div class="col-6 collapse-close">
+                  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-primary" aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <ul class="navbar-nav ml-lg-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="javascript:;">Clientes
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+			              <li class="nav-item">
+                <a class="nav-link" href="javascript:;">Tipo de Clientes
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="javascript:;" id="navbar-primary_dropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Relatórios</a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-primary_dropdown_1">
+                  <a class="dropdown-item" href="javascript:;">Clientes</a>
+                  <a class="dropdown-item" href="javascript:;">Tipo de Clientes</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="javascript:;" id="navbar-primary_dropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Conta</a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-primary_dropdown_1">
+                  <a class="dropdown-item" href="javascript:;">Sua Conta</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="javascript:;">Desconectar-se</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+  <!-- End Navbar -->
+  <div class="wrapper">
+    <div class="section features-6">
+      <div class="container">
 
-<h1>Clientes</h1>
-
-<table class="table-sm table-striped table-hover">
-  <thead class="thead-dark">
+<table class="table table-sm">
+  <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Cnpj</th>
-      <th scope="col">Razao social</th>
-      <th scope="col">Fantasia</th>
-      <th scope="col">Estado</th>
-      <th scope="col">Cep</th>
-      <th scope="col">Fone1</th>
-      <th scope="col">Fone2</th>
-      <th scope="col">Email</th>
-      <th scope="col">Ativo</th>
-      <th scope="col">Plano</th>
-      <th scope="col">Convenio</th>
-      <th scope="col" colspan="3">Ações</th>
+      <th>CNPJ</th>
+            <th>Razão Social</th>
+            <th>Fantasia</th>
+			<th>Estado</th>
+			<th>Cep</th>
+			<th>Ativo</th>
+			<th>Plano</th>
+			<th>Convenio</th>
     </tr>
   </thead>
   <tbody>
-    <% @clientes.each do |cliente| %>
     <tr>
-      <th scope="row"><%= cliente.id %></th>
-      <td><%= cliente.cnpj %></td>
-      <td><%= cliente.razao_social %></td>
-      <td><%= cliente.fantasia %></td>
-      <td><%= cliente.estado %></td>
-      <td><%= cliente.cep %></td>
-      <td><%= cliente.fone1 %></td>
-      <td><%= cliente.fone2 %></td>
-      <td><%= cliente.email %></td>
-      <td><%= cliente.ativo %></td>
-      <td><%= cliente.plano.descricao %></td>
-      <td><%= cliente.convenio_id %></td>
-      <td><%= link_to 'Show', cliente %></td>
-      <td><%= link_to 'Edit', edit_cliente_path(cliente) %></td>
-      <td><%= link_to 'Destroy', cliente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td class="text-center">1</td>
+            <td>53242341312</td>
+            <td>HPS Automacao S.A</td>
+            <td>HPS Automacao</td>
+			<td>SP</td>
+            <td>1304212</td>
+            <td>S</td>
+			<td>1</td>
+            <td>2</td>
     </tr>
-    <% end %>
+    <tr>
+      <td class="text-center">2</td>
+            <td>34212341092</td>
+            <td>Parking Campinas</td>
+            <td>Parking Campinas</td>
+			<td>SP</td>
+            <td>2303212</td>
+            <td>N</td>
+			<td>2</td>
+            <td>1</td>
+    </tr>
+    <tr>
+      <td class="text-center">3</td>
+            <td>98272341412</td>
+            <td>Estacionamento do Chico LTDA</td>
+            <td>Estacionamento do Chico</td>
+			<td>SP</td>
+            <td>2122212</td>
+            <td>S</td>
+			<td>2</td>
+            <td>3</td>
+    </tr>
   </tbody>
 </table>
-<br>
-<%= link_to 'New Cliente', new_cliente_path %>
+            <button type="button" class="btn btn-primary">Novo</button>
+
+
+      </div>
+    </div>
+    <div class="section features-1">
+<div class="container">    
+</div>
+    </div>
+    <br /><br />
+    <footer class="footer">
+      <div class="container">
+        <div class="row align-items-center justify-content-md-between">
+          <div class="col-md-6">
+            <div class="copyright">
+              &copy; 2020 <a href="" target="_blank">HPS Sistemas</a>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
