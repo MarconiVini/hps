@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Estadia</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Vagas codvaga</th>
+      <th>Loja codestab</th>
+      <th>Usuarios</th>
+      <th>Veiculos codveic</th>
+      <th>Clientes codclie</th>
+      <th>Data entrada</th>
+      <th>Data saida</th>
+      <th>Valor</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @estadia.each do |estadium| %>
+      <tr>
+        <td><%= estadium.vagas_codvaga %></td>
+        <td><%= estadium.loja_codestab %></td>
+        <td><%= estadium.usuarios_id %></td>
+        <td><%= estadium.veiculos_codveic %></td>
+        <td><%= estadium.clientes_codclie %></td>
+        <td><%= estadium.data_entrada %></td>
+        <td><%= estadium.data_saida %></td>
+        <td><%= estadium.valor %></td>
+        <td><%= link_to 'Show', estadium %></td>
+        <td><%= link_to 'Edit', edit_estadium_path(estadium) %></td>
+        <td><%= link_to 'Destroy', estadium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Estadium', new_estadium_path %>

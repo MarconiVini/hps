@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Planos</h1>
+
+<table class="table-sm table-striped table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Descricao</th>
+      <th scope="col">Valor</th>
+      <th scope="col">Ativo</th>
+      <th scope="col" colspan="3">Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @planos.each do |plano| %>
+      <tr>
+        <th scope="row"><%= plano.id %></th>
+        <td><%= plano.descricao %></td>
+        <td><%= plano.valor %></td>
+        <td><%= plano.ativo %></td>
+        <td><%= link_to 'Show', plano %></td>
+        <td><%= link_to 'Edit', edit_plano_path(plano) %></td>
+        <td><%= link_to 'Destroy', plano, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Plano', new_plano_path %>

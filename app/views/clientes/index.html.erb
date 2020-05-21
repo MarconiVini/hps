@@ -1,6 +1,6 @@
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary mt-4">
         <div class="container">
-          <a class="navbar-brand" href="javascript:;">HPS Sistemas / Clientes</a>
+          <a class="navbar-brand" href="/">HPS Sistemas / Clientes</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-primary" aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -22,12 +22,12 @@
             </div>
             <ul class="navbar-nav ml-lg-auto">
               <li class="nav-item">
-                <a class="nav-link" href="javascript:;">Clientes
+                <a class="nav-link" href="/clientes">Clientes
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
 			              <li class="nav-item">
-                <a class="nav-link" href="javascript:;">Tipo de Clientes
+                <a class="nav-link" href="/tipo_clientes">Tipo de Clientes
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
@@ -59,52 +59,32 @@
     <tr>
       <th scope="col">#</th>
       <th>CNPJ</th>
-            <th>Razão Social</th>
-            <th>Fantasia</th>
+      <th>Razão</th>
+      <th>Fantasia</th>
 			<th>Estado</th>
-			<th>Cep</th>
 			<th>Ativo</th>
-			<th>Plano</th>
-			<th>Convenio</th>
+      <th scope="col">Email</th>
+      <th scope="col" colspan="3">Ações</th>
     </tr>
   </thead>
   <tbody>
+  <% @clientes.each do |cliente| %>
     <tr>
-      <td class="text-center">1</td>
-            <td>53242341312</td>
-            <td>HPS Automacao S.A</td>
-            <td>HPS Automacao</td>
-			<td>SP</td>
-            <td>1304212</td>
-            <td>S</td>
-			<td>1</td>
-            <td>2</td>
+    <th scope="row"><%= cliente.id %></th>
+    <td><%= cliente.cnpj %></td>
+    <td><%= cliente.razao_social %></td>
+    <td><%= cliente.fantasia %></td>
+    <td><%= cliente.estado %></td>
+    <td><%= cliente.ativo %></td>
+    <td><%= cliente.email %></td>
+    <td><%= link_to 'Consultar', cliente %></td>
+    <td><%= link_to 'Editar', edit_cliente_path(cliente) %></td>
+    <td><%= link_to 'Excluir', cliente, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
     </tr>
-    <tr>
-      <td class="text-center">2</td>
-            <td>34212341092</td>
-            <td>Parking Campinas</td>
-            <td>Parking Campinas</td>
-			<td>SP</td>
-            <td>2303212</td>
-            <td>N</td>
-			<td>2</td>
-            <td>1</td>
-    </tr>
-    <tr>
-      <td class="text-center">3</td>
-            <td>98272341412</td>
-            <td>Estacionamento do Chico LTDA</td>
-            <td>Estacionamento do Chico</td>
-			<td>SP</td>
-            <td>2122212</td>
-            <td>S</td>
-			<td>2</td>
-            <td>3</td>
-    </tr>
+    <% end %>
   </tbody>
 </table>
-            <button type="button" class="btn btn-primary">Novo</button>
+            <a href="/clientes/new" class="btn btn-primary">Novo</a>
 
 
       </div>
@@ -114,15 +94,3 @@
 </div>
     </div>
     <br /><br />
-    <footer class="footer">
-      <div class="container">
-        <div class="row align-items-center justify-content-md-between">
-          <div class="col-md-6">
-            <div class="copyright">
-              &copy; 2020 <a href="" target="_blank">HPS Sistemas</a>.
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </div>

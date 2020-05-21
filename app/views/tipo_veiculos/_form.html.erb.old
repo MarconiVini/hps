@@ -1,0 +1,29 @@
+<%= form_with(model: tipo_veiculo, local: true) do |form| %>
+  <% if tipo_veiculo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tipo_veiculo.errors.count, "error") %> prohibited this tipo_veiculo from being saved:</h2>
+
+      <ul>
+      <% tipo_veiculo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="card">
+  <h5 class="card-header">Dados do Veiculo</h5>
+    <div class="card-body">
+      <form class="needs-validation" novalidate>
+        <div class="form-group">
+          <%= form.label :tipo %>
+          <%= form.text_field :tipo, id: :tipo_veiculo_tipo, class: 'form-control form-control-sm', required: true, type: 'text'  %>
+        </div>
+
+        <div class="actions form-group">
+          <%= form.submit %>
+        </div>
+      </form>
+    </div>
+  </div>
+<% end %>
