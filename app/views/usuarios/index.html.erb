@@ -22,12 +22,12 @@
             </div>
             <ul class="navbar-nav ml-lg-auto">
               <li class="nav-item">
-                <a class="nav-link" href="javascript:;">Usuários
+                <a class="nav-link" href="/usuarios">Usuários
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
 			              <li class="nav-item">
-                <a class="nav-link" href="javascript:;">Cargos
+                <a class="nav-link" href="/cargos">Cargos
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
@@ -47,7 +47,32 @@
   <div class="wrapper">
     <div class="section features-6">
       <div class="container">
-	  <!-- Dados da tela vem aqui -->
+    
+               
+<table class="table table-sm">
+<thead>
+  <tr>
+    <th scope="col">#</th>
+    <th>Nome</th>
+    <th>CodCargo</th>
+    <th scope="col" colspan="3">Ações</th>
+  </tr>
+</thead>
+<tbody>
+<% @usuarios.each do |usuario| %>
+  <tr>
+  <th scope="row"><%= usuario.id %></th>
+  <td><%= usuario.nome %></td>
+  <td><%= link_to 'Consultar', usuario %></td>
+  <td><%= link_to 'Editar', edit_usuario_path(usuario) %></td>
+  <td><%= link_to 'Excluir', usuario, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+  </tr>
+  <% end %>
+</tbody>
+</table>
+
+<a href="/usuarios/new" class="btn btn-primary">Novo</a>
+
       </div>
     </div>
     <div class="section features-1">

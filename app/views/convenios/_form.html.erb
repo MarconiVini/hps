@@ -42,7 +42,22 @@
   <div class="wrapper">
     <div class="section features-6">
       <div class="container">
-	  <form>
+
+      <%= form_with(model: convenio, local: true) do |form| %>
+  
+        <% if convenio.errors.any? %>
+        <div id="error_explanation">
+        <h2><%= pluralize(convenio.errors.count, "error") %> prohibited this convenio from being saved:</h2>
+        
+        <ul>
+        <% convenio.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+          </ul>
+          </div>
+          <% end %>
+
+<form>
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
@@ -67,13 +82,13 @@
     <div class="col-md-3">
       <div class="form-group">
 	  Estado
-    <%= form.text_field :estado, id: :convenio_estado, class: 'form-control form-control-sm', required: true, type: 'text' %>
+    <%= form.text_field :estado, id: :convenio_estado, class: 'form-control form-control-sm' %>
       </div>
     </div>
 	      <div class="col-md-3">
       <div class="form-group">
         CEP
-        <%= form.text_field :cep, id: :convenio_cep, class: 'form-control form-control-sm', required: true, type: 'text' %>
+        <%= form.text_field :cep, id: :convenio_cep, class: 'form-control form-control-sm' %>
       </div>
     </div>
   </div>
@@ -81,30 +96,39 @@
     <div class="col-md-6">
       <div class="form-group">
         Email
-        <%= form.text_field :email, id: :convenio_emai, class: 'form-control form-control-sm', type:'email', placeholder: 'nome@exemplo.com' %>
+        <%= form.text_field :email, id: :convenio_email, class: 'form-control form-control-sm', type:'email', placeholder: 'nome@exemplo.com' %>
       </div>
     </div>
     <div class="col-md-3">
       <div class="form-group">
 	  Fone1
-    <%= form.text_field :fone1, id: :convenio_fone1, class: 'form-control form-control-sm', type: 'text' %>
+    <%= form.text_field :fone1, id: :convenio_fone1, class: 'form-control form-control-sm' %>
       </div>
     </div>
 	    <div class="col-md-3">
       <div class="form-group">
 	  Fone2
-    <%= form.text_field :fone2, id: :convenio_fone2, class: 'form-control form-control-sm', type: 'text' %>
+    <%= form.text_field :fone2, id: :convenio_fone2, class: 'form-control form-control-sm' %>
       </div>
     </div>
-  </div>
   </div>
               <div class="custom-control custom-checkbox mb-3">
               <%= form.check_box :ativo, id: :convenio_ativo, class: 'form-check-input' %>
               <%= form.label :ativo, class: 'form-check-label' %>
             </div>
+
+            <div class="row">
+            <div class="col-md-6">
+            <div class="actions form-group">
+            <%= form.submit nil, class: 'btn btn-success' %>
+          
+            <a href="/convenios" class="btn btn-secondary">Voltar</a>
+            </div>
+          </div>
+          </div>
 </form>
-            <button type="button" class="btn btn-success">Salvar</button>
-			<button type="button" class="btn btn-secondary">Voltar</button>
+
+
 
       </div>
     </div>
@@ -113,3 +137,4 @@
 </div>
     </div>
     <br /><br />
+  <% end %>

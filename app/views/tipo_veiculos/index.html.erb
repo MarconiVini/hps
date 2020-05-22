@@ -1,6 +1,6 @@
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary mt-4">
         <div class="container">
-          <a class="navbar-brand" href="javascript:;">HPS Sistemas / Tipo de Veículos</a>
+          <a class="navbar-brand" href="/">HPS Sistemas / Tipo de Veículos</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-primary" aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -27,7 +27,7 @@
                 </a>
               </li>
 			              <li class="nav-item">
-                <a class="nav-link" href="tipo_veiculos">Tipo de Veículo
+                <a class="nav-link" href="/tipo_veiculos">Tipo de Veículo
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
@@ -47,7 +47,32 @@
   <div class="wrapper">
     <div class="section features-6">
       <div class="container">
-	  <!-- Dados da tela vem aqui -->
+    
+           
+<table class="table table-sm">
+<thead>
+  <tr>
+    <th scope="col">#</th>
+    <th>Tipo</th>
+    <th scope="col" colspan="3">Ações</th>
+  </tr>
+</thead>
+<tbody>
+<% @tipo_veiculos.each do |tipo_veiculo| %>
+  <tr>
+  <th scope="row"><%= tipo_veiculo.id %></th>
+  <td><%= tipo_veiculo.tipo %></td>
+  <td><%= link_to 'Consultar', tipo_veiculo %></td>
+  <td><%= link_to 'Editar', edit_tipo_veiculo_path(tipo_veiculo) %></td>
+  <td><%= link_to 'Excluir', tipo_veiculo, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+  </tr>
+  <% end %>
+</tbody>
+</table>
+
+<a href="/tipo_veiculos/new" class="btn btn-primary">Novo</a>
+
+
       </div>
     </div>
     <div class="section features-1">

@@ -22,28 +22,25 @@
             </div>
             <ul class="navbar-nav ml-lg-auto">
               <li class="nav-item">
-                <a class="nav-link" href="javascript:;">Estadia
+                <a class="nav-link" href="/estadia">Estadia
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
 			              <li class="nav-item">
-                <a class="nav-link" href="javascript:;">Vagas
+                <a class="nav-link" href="/vagas">Vagas
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
 			  			              <li class="nav-item">
-                <a class="nav-link" href="javascript:;">Planos
+                <a class="nav-link" href="/planos">Planos
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="javascript:;" id="navbar-primary_dropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Relatórios</a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-primary_dropdown_1">
-                  <a class="dropdown-item" href="javascript:;">Movimentação</a>
-                  <a class="dropdown-item" href="javascript:;">Análise de Clientes</a>
-				  <a class="dropdown-item" href="javascript:;">Análise de Veículos</a>
-				  <a class="dropdown-item" href="javascript:;">Tipos de Recebimento</a>
-              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="/lojas">Lojas
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="javascript:;" id="navbar-primary_dropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Conta</a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-primary_dropdown_1">
@@ -60,7 +57,42 @@
   <div class="wrapper">
     <div class="section features-6">
       <div class="container">
-	  <!-- Dados da tela vem aqui -->
+    
+      <table class="table table-sm">
+<thead>
+  <tr>
+    <th scope="col">#</th>
+    <th>CodLoja</th>
+    <th>CodVeiculo</th>
+    <th>CodCliente</th>
+    <th>CodVaga</th>
+    <th>Data Entrada</th>
+    <th>Data Saída</th>
+    <th>Valor</th>
+    <th scope="col" colspan="3">Ações</th>
+  </tr>
+</thead>
+<tbody>
+<% @estadia.each do |estadium| %>
+  <tr>
+  <th scope="row"><%= estadium.id %></th>
+  <td><%= estadium.loja_codestab %></td>
+  <td><%= estadium.veiculos_codveic %></td>
+  <td><%= estadium.clientes_codclie %></td>
+  <td><%= estadium.vagas_codvaga %></td>
+  <td><%= estadium.data_entrada %></td>
+  <td><%= estadium.data_saida %></td>
+  <td><%= estadium.valor %></td>
+  <td><%= link_to 'Consultar', estadium %></td>
+  <td><%= link_to 'Editar', edit_estadium_path(estadium) %></td>
+  <td><%= link_to 'Excluir', estadium, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+  </tr>
+  <% end %>
+</tbody>
+</table>
+
+<a href="/estadia/new" class="btn btn-primary">Novo</a>
+
       </div>
     </div>
     <div class="section features-1">

@@ -1,57 +1,142 @@
-<%= form_with(model: estadium, local: true) do |form| %>
-  <% if estadium.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(estadium.errors.count, "error") %> prohibited this estadium from being saved:</h2>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary mt-4">
+        <div class="container">
+          <a class="navbar-brand" href="/">HPS Sistemas / Cadastro de Estadia</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-primary" aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbar-primary">
+            <div class="navbar-collapse-header">
+              <div class="row">
+                <div class="col-6 collapse-brand">
+                  <a href="./index.html">
+                    <img src="./assets/img/brand/blue.png">
+                  </a>
+                </div>
+                <div class="col-6 collapse-close">
+                  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-primary" aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <ul class="navbar-nav ml-lg-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/estadia">Estadia
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+			              <li class="nav-item">
+                <a class="nav-link" href="/vagas">Vagas
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+			  			              <li class="nav-item">
+                <a class="nav-link" href="/planos">Planos
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+                            <li class="nav-item">
+              <a class="nav-link" href="/lojas">Lojas
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="javascript:;" id="navbar-primary_dropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Conta</a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-primary_dropdown_1">
+                  <a class="dropdown-item" href="javascript:;">Sua Conta</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="javascript:;">Desconectar-se</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+  <!-- End Navbar -->
+  <div class="wrapper">
+    <div class="section features-6">
+      <div class="container">
 
-      <ul>
-      <% estadium.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+
+      <%= form_with(model: estadium, local: true) do |form| %>
+        <% if estadium.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(estadium.errors.count, "error") %> prohibited this estadium from being saved:</h2>
+      
+            <ul>
+            <% estadium.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+	  <form>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        Código Vaga
+        <%= form.text_field :vagas_codvaga, id: :estadium_vagas_codvaga, class: 'form-control form-control-sm', required: true, type: 'text' %>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :vagas_codvaga %>
-    <%= form.number_field :vagas_codvaga, id: :estadium_vagas_codvaga %>
+    <div class="col-md-6">
+      <div class="form-group">
+	  Código Loja
+    <%= form.text_field :loja_codestab, id: :estadium_loja_codestab, class: 'form-control form-control-sm', required: true, type: 'text' %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-group">
+        Código Veículo
+        <%= form.text_field :veiculos_codveic, id: :estadium_veiculos_codveic, class: 'form-control form-control-sm', required: true, type: 'text' %>
+      </div>
+    </div>
+	    <div class="col-md-3">
+      <div class="form-group">
+	  Código Cliente
+    <%= form.text_field :clientes_codclie, id: :estadium_clientes_codclie, class: 'form-control form-control-sm', required: true, type: 'text' %>
+      </div>
+    </div>
+    <div class="col-md-3">
+    <div class="form-group">
+  Data Entrada
+  <%= form.text_field :data_entrada, id: :estadium_data_entrada, class: 'form-control form-control-sm', required: true, type: 'text' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :loja_codestab %>
-    <%= form.number_field :loja_codestab, id: :estadium_loja_codestab %>
+  <div class="col-md-3">
+  <div class="form-group">
+Data Saída
+<%= form.text_field :data_saida, id: :estadium_data_saida, class: 'form-control form-control-sm', required: true, type: 'text' %>
   </div>
+</div>
+					    <div class="col-md-6">
+      <div class="form-group">
+	  Valor
+    <%= form.text_field :valor, id: :estadium_valor, class: 'form-control form-control-sm', required: true, type: 'text' %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :usuarios_id %>
-    <%= form.number_field :usuarios_id, id: :estadium_usuarios_id %>
+    
   </div>
+  <div class="row">
+  <div class="col-md-6">
+  <div class="actions form-group">
+  <%= form.submit nil, class: 'btn btn-success' %>
 
-  <div class="field">
-    <%= form.label :veiculos_codveic %>
-    <%= form.number_field :veiculos_codveic, id: :estadium_veiculos_codveic %>
+  <a href="/estadia" class="btn btn-secondary">Voltar</a>
   </div>
-
-  <div class="field">
-    <%= form.label :clientes_codclie %>
-    <%= form.number_field :clientes_codclie, id: :estadium_clientes_codclie %>
-  </div>
-
-  <div class="field">
-    <%= form.label :data_entrada %>
-    <%= form.date_select :data_entrada, id: :estadium_data_entrada %>
-  </div>
-
-  <div class="field">
-    <%= form.label :data_saida %>
-    <%= form.date_select :data_saida, id: :estadium_data_saida %>
-  </div>
-
-  <div class="field">
-    <%= form.label :valor %>
-    <%= form.text_field :valor, id: :estadium_valor %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
+</div>
+</form>
+      </div>
+    </div>
+    <div class="section features-1">
+<div class="container">    
+</div>
+    </div>
+    <br /><br />
+    <% end %>

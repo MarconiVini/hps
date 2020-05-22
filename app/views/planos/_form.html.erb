@@ -1,43 +1,111 @@
-<%= form_with(model: plano, local: true) do |form| %>
-  <% if plano.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(plano.errors.count, "error") %> prohibited this plano from being saved:</h2>
-
-      <ul>
-      <% plano.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="card">
-  <h5 class="card-header">Dados do plano</h5>
-    <div class="card-body">
-      <form class="needs-validation" novalidate>
-        <div class="form-row">
-
-          <div class="form-group form-group col-md-6 mb-3">
-            <%= form.label :descricao %>
-            <%= form.text_field :descricao, id: :plano_descricao, class: 'form-control form-control-sm', required: true, type: 'text' %>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary mt-4">
+        <div class="container">
+          <a class="navbar-brand" href="/">HPS Sistemas / Cadastro de Plano</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-primary" aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbar-primary">
+            <div class="navbar-collapse-header">
+              <div class="row">
+                <div class="col-6 collapse-brand">
+                  <a href="./index.html">
+                    <img src="./assets/img/brand/blue.png">
+                  </a>
+                </div>
+                <div class="col-6 collapse-close">
+                  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-primary" aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                  </button>
+                </div>
+              </div>
             </div>
-
-          <div class="form-group form-group col-md-6 mb-3">
-            <%= form.label :valor %>
-            <%= form.text_field :valor, id: :plano_valor, class: 'form-control form-control-sm', required: true %>
-            </div>
+            <ul class="navbar-nav ml-lg-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/estadia">Estadia
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+			              <li class="nav-item">
+                <a class="nav-link" href="/vagas">Vagas
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+			  			              <li class="nav-item">
+                <a class="nav-link" href="/planos">Planos
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="/lojas">Lojas
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="javascript:;" id="navbar-primary_dropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Conta</a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-primary_dropdown_1">
+                  <a class="dropdown-item" href="javascript:;">Sua Conta</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="javascript:;">Desconectar-se</a>
+                </div>
+              </li>
+            </ul>
           </div>
+        </div>
+      </nav>
+  <!-- End Navbar -->
+  <div class="wrapper">
+    <div class="section features-6">
+      <div class="container">
 
-          <div class="form-check">
-            <%= form.check_box :ativo, id: :plano_ativo, class: 'form-check-input' %>
-            <%= form.label :ativo, class: 'form-check-label' %>
-            </div>
+      <%= form_with(model: plano, local: true) do |form| %>
+        <% if plano.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(plano.errors.count, "error") %> prohibited this plano from being saved:</h2>
+      
+            <ul>
+            <% plano.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
           </div>
+        <% end %>
 
-          <div class="actions form-group">
-            <%= form.submit %>
-            </div>
-       </form>
+	  <form>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        Descrição
+        <%= form.text_field :descricao, id: :plano_descricao, class: 'form-control form-control-sm', type:'text', placeholder: '',required: true %>
       </div>
     </div>
-<% end %>
+    <div class="col-md-6">
+      <div class="form-group">
+	  Valor
+    <%= form.text_field :valor, id: :plano_valor, class: 'form-control form-control-sm', type:'text', placeholder: '',required: true %>
+      </div>
+    </div>
+  </div>
+                          <div class="custom-control custom-checkbox mb-3">
+              <%= form.check_box :ativo, id: :convenio_ativo, class: 'form-check-input' %>
+              <%= form.label :ativo, class: 'form-check-label' %>
+              </div>
+
+            <div class="row">
+            <div class="col-md-6">
+            <div class="actions form-group">
+            <%= form.submit nil, class: 'btn btn-success' %>
+          
+            <a href="/planos" class="btn btn-secondary">Voltar</a>
+            </div>
+          </div>
+          </div>
+</form>
+      </div>
+    </div>
+    <div class="section features-1">
+<div class="container">    
+</div>
+    </div>
+    <br /><br />
+    <% end %>

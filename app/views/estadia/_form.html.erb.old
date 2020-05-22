@@ -1,0 +1,57 @@
+<%= form_with(model: estadium, local: true) do |form| %>
+  <% if estadium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(estadium.errors.count, "error") %> prohibited this estadium from being saved:</h2>
+
+      <ul>
+      <% estadium.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :vagas_codvaga %>
+    <%= form.number_field :vagas_codvaga, id: :estadium_vagas_codvaga %>
+  </div>
+
+  <div class="field">
+    <%= form.label :loja_codestab %>
+    <%= form.number_field :loja_codestab, id: :estadium_loja_codestab %>
+  </div>
+
+  <div class="field">
+    <%= form.label :usuarios_id %>
+    <%= form.number_field :usuarios_id, id: :estadium_usuarios_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :veiculos_codveic %>
+    <%= form.number_field :veiculos_codveic, id: :estadium_veiculos_codveic %>
+  </div>
+
+  <div class="field">
+    <%= form.label :clientes_codclie %>
+    <%= form.number_field :clientes_codclie, id: :estadium_clientes_codclie %>
+  </div>
+
+  <div class="field">
+    <%= form.label :data_entrada %>
+    <%= form.date_select :data_entrada, id: :estadium_data_entrada %>
+  </div>
+
+  <div class="field">
+    <%= form.label :data_saida %>
+    <%= form.date_select :data_saida, id: :estadium_data_saida %>
+  </div>
+
+  <div class="field">
+    <%= form.label :valor %>
+    <%= form.text_field :valor, id: :estadium_valor %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

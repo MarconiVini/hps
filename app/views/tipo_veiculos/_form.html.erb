@@ -22,12 +22,12 @@
             </div>
             <ul class="navbar-nav ml-lg-auto">
               <li class="nav-item">
-                <a class="nav-link" href="javascript:;">Veículos
+                <a class="nav-link" href="/veiculos">Veículos
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
 			              <li class="nav-item">
-                <a class="nav-link" href="javascript:;">Tipo de Veículo
+                <a class="nav-link" href="/tipo_veiculos">Tipo de Veículo
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
@@ -47,18 +47,41 @@
   <div class="wrapper">
     <div class="section features-6">
       <div class="container">
+
+      <%= form_with(model: tipo_veiculo, local: true) do |form| %>
+
+        <% if tipo_veiculo.errors.any? %>
+        <div id="error_explanation">
+        <h2><%= pluralize(tipo_veiculo.errors.count, "error") %> prohibited this tipo_veiculo from being saved:</h2>
+        
+        <ul>
+        <% tipo_veiculo.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+          </ul>
+          </div>
+          <% end %>
+
 	  <form>
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
         Tipo de Veículo
-		<input type="text" class="form-control form-control-alternative" id="veiculo_modelo" placeholder="Informe o tipo de veículo">
+        <%= form.text_field :tipo, id: :tipo_veiculo_tipo, class: 'form-control form-control-sm', required: true, type: 'text' %>
       </div>
     </div>
   </div>
+
+  <div class="row">
+  <div class="col-md-6">
+  <div class="actions form-group">
+  <%= form.submit nil, class: 'btn btn-success' %>
+
+  <a href="/tipo_veiculos" class="btn btn-secondary">Voltar</a>
+  </div>
+</div>
+</div>
 </form>
-            <button type="button" class="btn btn-success">Salvar</button>
-			<button type="button" class="btn btn-secondary">Voltar</button>
       </div>
     </div>
     <div class="section features-1">
@@ -66,3 +89,4 @@
 </div>
     </div>
     <br /><br />
+    <% end %>

@@ -1,0 +1,43 @@
+<%= form_with(model: plano, local: true) do |form| %>
+  <% if plano.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(plano.errors.count, "error") %> prohibited this plano from being saved:</h2>
+
+      <ul>
+      <% plano.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="card">
+  <h5 class="card-header">Dados do plano</h5>
+    <div class="card-body">
+      <form class="needs-validation" novalidate>
+        <div class="form-row">
+
+          <div class="form-group form-group col-md-6 mb-3">
+            <%= form.label :descricao %>
+            <%= form.text_field :descricao, id: :plano_descricao, class: 'form-control form-control-sm', required: true, type: 'text' %>
+            </div>
+
+          <div class="form-group form-group col-md-6 mb-3">
+            <%= form.label :valor %>
+            <%= form.text_field :valor, id: :plano_valor, class: 'form-control form-control-sm', required: true %>
+            </div>
+          </div>
+
+          <div class="form-check">
+            <%= form.check_box :ativo, id: :plano_ativo, class: 'form-check-input' %>
+            <%= form.label :ativo, class: 'form-check-label' %>
+            </div>
+          </div>
+
+          <div class="actions form-group">
+            <%= form.submit %>
+            </div>
+       </form>
+      </div>
+    </div>
+<% end %>

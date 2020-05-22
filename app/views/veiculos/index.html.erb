@@ -47,7 +47,37 @@
   <div class="wrapper">
     <div class="section features-6">
       <div class="container">
-	  <!-- Dados da tela vem aqui -->
+    
+      
+<table class="table table-sm">
+<thead>
+  <tr>
+    <th scope="col">#</th>
+    <th>Placa</th>
+    <th>Modelo</th>
+    <th>Marca</th>
+    <th>Cor</th>
+    <th scope="col" colspan="3">Ações</th>
+  </tr>
+</thead>
+<tbody>
+<% @veiculos.each do |veiculo| %>
+  <tr>
+  <th scope="row"><%= veiculo.id %></th>
+  <td><%= veiculo.placa %></td>
+  <td><%= veiculo.modelo %></td>
+  <td><%= veiculo.marca %></td>
+  <td><%= veiculo.cor %></td>
+  <td><%= link_to 'Consultar', veiculo %></td>
+  <td><%= link_to 'Editar', edit_veiculo_path(veiculo) %></td>
+  <td><%= link_to 'Excluir', veiculo, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+  </tr>
+  <% end %>
+</tbody>
+</table>
+
+<a href="/veiculos/new" class="btn btn-primary">Novo</a>
+
       </div>
     </div>
     <div class="section features-1">

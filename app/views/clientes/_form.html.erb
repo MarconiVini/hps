@@ -27,7 +27,7 @@
                 </a>
               </li>
 			              <li class="nav-item">
-                <a class="nav-link" href="/tipo_clientes">Tipo de Clientes
+                <a class="nav-link" href="#">Tipo de Clientes
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
@@ -141,9 +141,17 @@
               <%= form.check_box :ativo, id: :cliente_ativo, class: 'form-check-input' %>
               <%= form.label :ativo, class: 'form-check-label' %>
             </div>
+
+            <div class="row">
+            <div class="col-md-6">
+            <div class="actions form-group">
+            <%= form.submit nil, class: 'btn btn-success' %>
+          
+            <a href="/clientes" class="btn btn-secondary">Voltar</a>
+            </div>
+          </div>
+          </div>
 </form>
-            <button type="button" class="btn btn-success">Salvar</button>
-      <a href="/clientes" class="btn btn-secondary">Voltar</a>
 
 
       </div>
