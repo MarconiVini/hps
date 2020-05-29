@@ -1,4 +1,3 @@
-require 'pry'
 require 'faker'
 
 FactoryBot.define do
