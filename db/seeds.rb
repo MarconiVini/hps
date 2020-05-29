@@ -31,6 +31,8 @@ cliente = Cliente.new({
   ativo: true
 })
 
+plano = Plano.all.first
+
 cliente.plano = plano
 
 cliente.save
