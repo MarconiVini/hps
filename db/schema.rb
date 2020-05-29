@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200424220033) do
+ActiveRecord::Schema.define(version: 20200529205959) do
 
   create_table "cargos", force: :cascade do |t|
     t.string "desc_cargo"
@@ -29,9 +29,10 @@ ActiveRecord::Schema.define(version: 20200424220033) do
     t.string "email"
     t.boolean "ativo"
     t.integer "plano_id"
-    t.integer "convenio_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "convenio_id"
+    t.index ["convenio_id"], name: "index_clientes_on_convenio_id"
     t.index ["plano_id"], name: "index_clientes_on_plano_id"
   end
 
@@ -102,13 +103,14 @@ ActiveRecord::Schema.define(version: 20200424220033) do
   end
 
   create_table "veiculos", force: :cascade do |t|
-    t.integer "tipoveiculo_codtipoveiculo"
     t.string "placa"
     t.string "modelo"
     t.string "marca"
     t.string "cor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "tipo_veiculo_id"
+    t.index ["tipo_veiculo_id"], name: "index_veiculos_on_tipo_veiculo_id"
   end
 
 end

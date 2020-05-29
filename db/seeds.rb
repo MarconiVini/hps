@@ -6,9 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'pry'
+require 'factory_bot'
+Dir['./app/factories/*.rb'].each { |file| require file }
+include FactoryBot::Syntax::Methods
 
-plano = Plano.new({descricao: "novo plano", ativo:true, valor:20.3})
-plano.save
+create_list(:plano, 12)
+create_list(:convenio, 12)
+create_list(:veiculo, 22)
+create_list(:cargo, 5)
+create_list(:loja, 10)
+create_list(:vaga, 40)
+
+#binding.pry
 
 cliente = Cliente.new({
   cnpj: '383838383',
