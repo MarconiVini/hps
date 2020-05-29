@@ -6,7 +6,7 @@ FactoryBot.define do
     cnpj { Faker::CNPJ.pretty }
     razao_social { Faker::Company.name }
     fantasia { Faker::Company.industry }
-    estado 'SP'
-    cep '13-098421'
+    estado { 'SP' }
+    cep { '13-098421' }
   end
 end
