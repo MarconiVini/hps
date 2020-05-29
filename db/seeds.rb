@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'pry'
+# require 'pry'
 require 'factory_bot'
 Dir['./app/factories/*.rb'].each { |file| require file }
 include FactoryBot::Syntax::Methods

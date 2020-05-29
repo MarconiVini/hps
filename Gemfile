@@ -9,10 +9,11 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.7'
 # Use sqlite3 as the database for Active Record
+gem 'cpf_faker'
+gem 'factory_bot'
+gem 'faker'
+
 group :development, :test do
-  gem 'cpf_faker'
-  gem 'factory_bot'
-  gem 'faker'
   gem 'sqlite3'
 end
 
