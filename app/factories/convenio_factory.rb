@@ -11,6 +11,6 @@ FactoryBot.define do
     fone1 { "(19) #{rand(1000..9999)}-#{rand(1000..9999)}" } 
     fone2 { "(19) #{rand(1000..9999)}-#{rand(1000..9999)}" }
     email { Faker::Internet.email }
-    ativo true
+    ativo { true }
   end
 end
