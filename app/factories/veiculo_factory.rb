@@ -7,7 +7,7 @@ FactoryBot.define do
 
     marca do 
       models = Faker::Vehicle.models_by_make[self.modelo.to_sym]
-      models[rand(0..models.size)]
+      models[rand(0..(models.size - 1))]
     end
 
     cor { Faker::Vehicle.color }

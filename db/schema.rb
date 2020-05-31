@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200530135747) do
+ActiveRecord::Schema.define(version: 20200531205822) do
 
   create_table "cargos", force: :cascade do |t|
     t.string "desc_cargo"
@@ -51,18 +51,19 @@ ActiveRecord::Schema.define(version: 20200530135747) do
   end
 
   create_table "estadias", force: :cascade do |t|
-    t.integer "usuarios_id"
     t.decimal "valor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "data_entrada"
     t.datetime "data_saida"
-    t.integer "vagas_id"
-    t.integer "veiculos_id"
-    t.integer "clientes_id"
-    t.index ["clientes_id"], name: "index_estadias_on_clientes_id"
-    t.index ["vagas_id"], name: "index_estadias_on_vagas_id"
-    t.index ["veiculos_id"], name: "index_estadias_on_veiculos_id"
+    t.integer "vaga_id"
+    t.integer "veiculo_id"
+    t.integer "cliente_id"
+    t.integer "usuario_id"
+    t.index ["cliente_id"], name: "index_estadias_on_cliente_id"
+    t.index ["usuario_id"], name: "index_estadias_on_usuario_id"
+    t.index ["vaga_id"], name: "index_estadias_on_vaga_id"
+    t.index ["veiculo_id"], name: "index_estadias_on_veiculo_id"
   end
 
   create_table "planos", force: :cascade do |t|
@@ -80,11 +81,12 @@ ActiveRecord::Schema.define(version: 20200530135747) do
   end
 
   create_table "usuarios", force: :cascade do |t|
-    t.integer "cargos_codcargo"
     t.string "nome"
     t.string "senha"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "cargo_id"
+    t.index ["cargo_id"], name: "index_usuarios_on_cargo_id"
   end
 
   create_table "vagas", force: :cascade do |t|
@@ -102,6 +104,8 @@ ActiveRecord::Schema.define(version: 20200530135747) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "tipo_veiculo_id"
+    t.integer "cliente_id"
+    t.index ["cliente_id"], name: "index_veiculos_on_cliente_id"
     t.index ["tipo_veiculo_id"], name: "index_veiculos_on_tipo_veiculo_id"
   end
 
