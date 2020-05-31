@@ -14,13 +14,3 @@ FactoryBot.define do
     end
   end
 end
-
-# t.decimal "valor"
-# t.datetime "created_at", null: false
-# t.datetime "updated_at", null: false
-# t.datetime "data_entrada"
-# t.datetime "data_saida"
-# t.integer "vaga_id"
-# t.integer "veiculo_id"
-# t.integer "cliente_id"
-# t.integer "usuario_id"

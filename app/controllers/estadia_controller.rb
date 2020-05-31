@@ -1,10 +1,10 @@
 class EstadiaController < ApplicationController
-  before_action :set_estadium, only: [:show, :edit, :update, :destroy]
+  before_action :set_estadia, only: [:show, :edit, :update, :destroy]
 
   # GET /estadia
   # GET /estadia.json
   def index
-    @estadia = Estadium.all
+    @estadia = Estadia.all
   end
 
   # GET /estadia/1
@@ -14,7 +14,7 @@ class EstadiaController < ApplicationController
 
   # GET /estadia/new
   def new
-    @estadium = Estadium.new
+    @estadia = Estadia.new
   end
 
   # GET /estadia/1/edit
@@ -24,15 +24,15 @@ class EstadiaController < ApplicationController
   # POST /estadia
   # POST /estadia.json
   def create
-    @estadium = Estadium.new(estadium_params)
+    @estadia = Estadia.new(estadia_params)
 
     respond_to do |format|
-      if @estadium.save
-        format.html { redirect_to @estadium, notice: 'Estadium was successfully created.' }
-        format.json { render :show, status: :created, location: @estadium }
+      if @estadia.save
+        format.html { redirect_to @estadia, notice: 'Estadia was successfully created.' }
+        format.json { render :show, status: :created, location: @estadia }
       else
         format.html { render :new }
-        format.json { render json: @estadium.errors, status: :unprocessable_entity }
+        format.json { render json: @estadia.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -41,12 +41,12 @@ class EstadiaController < ApplicationController
   # PATCH/PUT /estadia/1.json
   def update
     respond_to do |format|
-      if @estadium.update(estadium_params)
-        format.html { redirect_to @estadium, notice: 'Estadium was successfully updated.' }
-        format.json { render :show, status: :ok, location: @estadium }
+      if @estadia.update(estadia_params)
+        format.html { redirect_to @estadia, notice: 'Estadia was successfully updated.' }
+        format.json { render :show, status: :ok, location: @estadia }
       else
         format.html { render :edit }
-        format.json { render json: @estadium.errors, status: :unprocessable_entity }
+        format.json { render json: @estadia.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -54,21 +54,21 @@ class EstadiaController < ApplicationController
   # DELETE /estadia/1
   # DELETE /estadia/1.json
   def destroy
-    @estadium.destroy
+    @estadia.destroy
     respond_to do |format|
-      format.html { redirect_to estadia_url, notice: 'Estadium was successfully destroyed.' }
+      format.html { redirect_to estadia_url, notice: 'Estadia was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_estadium
-      @estadium = Estadium.find(params[:id])
+    def set_estadia
+      @estadia = Estadia.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
-    def estadium_params
-      params.require(:estadium).permit(:vagas_codvaga, :loja_codestab, :usuarios_id, :veiculos_codveic, :clientes_codclie, :data_entrada, :data_saida, :valor)
+    def estadia_params
+      params.require(:estadia).permit(:vagas_codvaga, :loja_codestab, :usuarios_id, :veiculos_codveic, :clientes_codclie, :data_entrada, :data_saida, :valor)
     end
 end

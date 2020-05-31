@@ -62,10 +62,9 @@
 <thead>
   <tr>
     <th scope="col">#</th>
-    <th>CodLoja</th>
-    <th>CodVeiculo</th>
-    <th>CodCliente</th>
-    <th>CodVaga</th>
+    <th>Veiculo</th>
+    <th>Cliente</th>
+    <th>Vaga</th>
     <th>Data Entrada</th>
     <th>Data Saída</th>
     <th>Valor</th>
@@ -76,15 +75,18 @@
 <% @estadia.each do |estadia| %>
   <tr>
   <th scope="row"><%= estadia.id %></th>
-  <td><%= estadia.loja_codestab %></td>
-  <td><%= estadia.veiculos_codveic %></td>
-  <td><%= estadia.clientes_codclie %></td>
-  <td><%= estadia.vagas_codvaga %></td>
+  <td><%= estadia.veiculo.placa %></td>
+  <td><%= estadia.cliente.razao_social %></td>
+  <td><%= "#{estadia.vaga.quadra} - #{estadia.vaga.tipo}" %></td>
   <td><%= estadia.data_entrada %></td>
   <td><%= estadia.data_saida %></td>
   <td><%= estadia.valor %></td>
   <td><%= link_to 'Consultar', estadia %></td>
-  <td><%= link_to 'Editar', edit_estadia_path(estadia) %></td>
+  <%
+=begin%>
+ <td><%= link_to 'Editar', edit_estadia_path(estadia) %></td> 
+<%
+=end%>
   <td><%= link_to 'Excluir', estadia, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
   </tr>
   <% end %>
