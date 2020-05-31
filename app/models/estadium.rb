@@ -1,2 +1,0 @@
-class Estadium < ApplicationRecord
-end

@@ -73,19 +73,19 @@
   </tr>
 </thead>
 <tbody>
-<% @estadia.each do |estadium| %>
+<% @estadia.each do |estadia| %>
   <tr>
-  <th scope="row"><%= estadium.id %></th>
-  <td><%= estadium.loja_codestab %></td>
-  <td><%= estadium.veiculos_codveic %></td>
-  <td><%= estadium.clientes_codclie %></td>
-  <td><%= estadium.vagas_codvaga %></td>
-  <td><%= estadium.data_entrada %></td>
-  <td><%= estadium.data_saida %></td>
-  <td><%= estadium.valor %></td>
-  <td><%= link_to 'Consultar', estadium %></td>
-  <td><%= link_to 'Editar', edit_estadium_path(estadium) %></td>
-  <td><%= link_to 'Excluir', estadium, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+  <th scope="row"><%= estadia.id %></th>
+  <td><%= estadia.loja_codestab %></td>
+  <td><%= estadia.veiculos_codveic %></td>
+  <td><%= estadia.clientes_codclie %></td>
+  <td><%= estadia.vagas_codvaga %></td>
+  <td><%= estadia.data_entrada %></td>
+  <td><%= estadia.data_saida %></td>
+  <td><%= estadia.valor %></td>
+  <td><%= link_to 'Consultar', estadia %></td>
+  <td><%= link_to 'Editar', edit_estadia_path(estadia) %></td>
+  <td><%= link_to 'Excluir', estadia, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
   </tr>
   <% end %>
 </tbody>

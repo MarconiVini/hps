@@ -5,17 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# require 'pry'
+#require 'pry'
 require 'factory_bot'
 Dir['./app/factories/*.rb'].each { |file| require file }
 include FactoryBot::Syntax::Methods
 
 create_list(:plano, 12)
 create_list(:convenio, 12)
-create_list(:veiculo, 22)
 create_list(:cargo, 5)
-create_list(:loja, 10)
 create_list(:vaga, 40)
+create_list(:tipo_veiculo, 3)
+
+tipos_veiculos = TipoVeiculo.all.to_a
+create_list(:veiculo, 8, tipo_veiculo: tipos_veiculos[0])
+create_list(:veiculo, 4, tipo_veiculo: tipos_veiculos[1])
+create_list(:veiculo, 14, tipo_veiculo: tipos_veiculos[2])
 
 #binding.pry
 

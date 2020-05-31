@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200529205959) do
+ActiveRecord::Schema.define(version: 20200530135747) do
 
   create_table "cargos", force: :cascade do |t|
     t.string "desc_cargo"
@@ -50,27 +50,19 @@ ActiveRecord::Schema.define(version: 20200529205959) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "estadia", force: :cascade do |t|
-    t.integer "vagas_codvaga"
-    t.integer "loja_codestab"
+  create_table "estadias", force: :cascade do |t|
     t.integer "usuarios_id"
-    t.integer "veiculos_codveic"
-    t.integer "clientes_codclie"
-    t.date "data_entrada"
-    t.date "data_saida"
     t.decimal "valor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "lojas", force: :cascade do |t|
-    t.string "cnpj"
-    t.string "razao_social"
-    t.string "fantasia"
-    t.string "estado"
-    t.string "cep"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "data_entrada"
+    t.datetime "data_saida"
+    t.integer "vagas_id"
+    t.integer "veiculos_id"
+    t.integer "clientes_id"
+    t.index ["clientes_id"], name: "index_estadias_on_clientes_id"
+    t.index ["vagas_id"], name: "index_estadias_on_vagas_id"
+    t.index ["veiculos_id"], name: "index_estadias_on_veiculos_id"
   end
 
   create_table "planos", force: :cascade do |t|

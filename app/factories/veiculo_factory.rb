@@ -9,11 +9,11 @@ FactoryBot.define do
       models = Faker::Vehicle.models_by_make[self.modelo.to_sym]
       models[rand(0..models.size)]
     end
-    
+
     cor { Faker::Vehicle.color }
 
-    before(:create) do |veiculo|
-      veiculo.tipo_veiculo = create(:tipo_veiculo)
-    end
+    # before(:create) do |veiculo|
+    #   veiculo.tipo_veiculo = create(:tipo_veiculo)
+    # end
   end
 end
