@@ -81,13 +81,9 @@
   <td><%= estadia.data_entrada %></td>
   <td><%= estadia.data_saida %></td>
   <td><%= estadia.valor %></td>
-  <td><%= link_to 'Consultar', estadia %></td>
-  <%
-=begin%>
- <td><%= link_to 'Editar', edit_estadia_path(estadia) %></td> 
-<%
-=end%>
-  <td><%= link_to 'Excluir', estadia, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+  <td><%= link_to 'Consultar', estadia_path(estadia) %></td>
+  <td><%= link_to 'Editar', edit_estadia_path(estadia) %></td>
+  <td><%= link_to 'Excluir', estadia_path(estadia), method: :delete, data: { confirm: 'Tem certeza?' } %></td>
   </tr>
   <% end %>
 </tbody>

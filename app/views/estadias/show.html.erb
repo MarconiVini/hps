@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Vaga:</strong>
+  <%= @estadia.vaga_id %>
+</p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @estadia.usuario_id %>
+</p>
+
+<p>
+  <strong>Veiculo:</strong>
+  <%= @estadia.veiculo_id %>
+</p>
+
+<p>
+  <strong>Cliente:</strong>
+  <%= @estadia.cliente_id %>
+</p>
+
+<p>
+  <strong>Data entrada:</strong>
+  <%= @estadia.data_entrada %>
+</p>
+
+<p>
+  <strong>Data saida:</strong>
+  <%= @estadia.data_saida %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @estadia.valor %>
+</p>
+
+<%= link_to 'Edit', edit_estadia_path(@estadia) %> |
+<%= link_to 'Back', estadias_path %>

@@ -1,4 +1,4 @@
-class EstadiaController < ApplicationController
+class EstadiasController < ApplicationController
   before_action :set_estadia, only: [:show, :edit, :update, :destroy]
 
   # GET /estadia
@@ -69,6 +69,6 @@ class EstadiaController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def estadia_params
-      params.require(:estadia).permit(:vagas_codvaga, :loja_codestab, :usuarios_id, :veiculos_codveic, :clientes_codclie, :data_entrada, :data_saida, :valor)
+      params.require(:estadia).permit(:vaga_id, :usuario_id, :veiculo_id, :cliente_id, :data_entrada, :data_saida, :valor)
     end
 end
