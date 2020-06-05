@@ -38,12 +38,12 @@ ActiveRecord::Schema.define(version: 20200529205959) do
 
   create_table "convenios", force: :cascade do |t|
     t.string "cnpj"
-    t.string "razao_social", limit: 200
-    t.string "fantasia", limit: 200
-    t.string "estado", limit: 100
-    t.string "cep", limit: 100
-    t.string "fone1", limit: 100
-    t.string "fone2", limit: 100
+    t.string "razao_social", limit: 15
+    t.string "fantasia", limit: 50
+    t.string "estado", limit: 2
+    t.string "cep", limit: 8
+    t.string "fone1", limit: 12
+    t.string "fone2", limit: 12
     t.string "email", limit: 120
     t.boolean "ativo"
     t.datetime "created_at", null: false
@@ -96,8 +96,8 @@ ActiveRecord::Schema.define(version: 20200529205959) do
   end
 
   create_table "vagas", force: :cascade do |t|
-    t.string "quadra", limit: 200
-    t.string "tipo", limit: 200
+    t.string "quadra", limit: 10
+    t.string "tipo", limit: 15
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
