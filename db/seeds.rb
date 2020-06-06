@@ -74,7 +74,7 @@ def make_estadias_for_cliente(cliente)
       )
       tempo_total = distance_of_time_in_words(estadia.data_entrada, estadia.data_saida)
       puts "Gerado estadia para a vaga #{estadia.vaga.quadra}-#{estadia.vaga.tipo} -- na data #{estadia.data_entrada} -- for #{tempo_total}."
-      sleep 0.2
+      #sleep 0.2
     end
   end
 end
