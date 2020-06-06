@@ -1,11 +1,7 @@
-require 'pry'
-
 class DashboardController < ApplicationController
   def index
     start_date = params[:data_inicial].to_date
     end_date = params[:data_final].to_date
-    
-    binding.pry
     
     @estadia = Estadia.where(data_saida: start_date..end_date)
   end
