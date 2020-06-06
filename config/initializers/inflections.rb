@@ -15,7 +15,7 @@
 #   inflect.acronym 'RESTful'
 # end
 ActiveSupport::Inflector.inflections(:en) do |inflect|
-  inflect.irregular 'estadia', 'estadium'
+  inflect.irregular 'estadia', 'estadias'
 end
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.irregular 'person', 'people'

@@ -1,0 +1,28 @@
+
+<canvas class="line-chart"></canvas>
+
+<script>
+
+var ctx = document.getElementsByClassName("line-chart");
+
+function httpGet(theUrl) {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("GET", theUrl, false); // false for synchronous request
+    xmlHttp.send(null);
+    return xmlHttp.responseText;
+}
+
+//httpGet('http://hps-fatec2020.herokuapp.com/clientes.json')
+
+var chart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+        datasets: [{
+            label: 'Rendimento no Mês',
+            data: [3982, 7125, 8650.23, 4321, 6563,3122,1233,4212,5312,4212,8223,3223],
+            borderColor: 'rgba(77,166,253,0.85)'
+        }]
+    }
+});
+</script>

@@ -76,6 +76,14 @@
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
+            Código Usuário
+            <%= form.text_field :usuario_id, id: :usuario_id, class: 'form-control form-control-sm', required: true, type: 'text' %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
             Código Vaga
             <%= form.text_field :vaga_id, id: :estadia_vaga_id, class: 'form-control form-control-sm', required: true, type: 'text' %>
           </div>

@@ -7,6 +7,10 @@ class EstadiasController < ApplicationController
     @estadia = Estadia.all
   end
 
+  def dashboard
+
+  end
+
   # GET /estadia/1
   # GET /estadia/1.json
   def show
