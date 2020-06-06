@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :lojas
-  resources :estadia
+  resources :estadias
   resources :cargos
   resources :usuarios
   resources :veiculos

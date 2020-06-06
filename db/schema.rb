@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200529205959) do
+ActiveRecord::Schema.define(version: 20200531205822) do
 
   create_table "cargos", force: :cascade do |t|
     t.string "desc_cargo"
@@ -50,27 +50,20 @@ ActiveRecord::Schema.define(version: 20200529205959) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "estadia", force: :cascade do |t|
-    t.integer "vagas_codvaga"
-    t.integer "loja_codestab"
-    t.integer "usuarios_id"
-    t.integer "veiculos_codveic"
-    t.integer "clientes_codclie"
-    t.date "data_entrada"
-    t.date "data_saida"
+  create_table "estadias", force: :cascade do |t|
     t.decimal "valor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "lojas", force: :cascade do |t|
-    t.string "cnpj"
-    t.string "razao_social"
-    t.string "fantasia"
-    t.string "estado"
-    t.string "cep"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "data_entrada"
+    t.datetime "data_saida"
+    t.integer "vaga_id"
+    t.integer "veiculo_id"
+    t.integer "cliente_id"
+    t.integer "usuario_id"
+    t.index ["cliente_id"], name: "index_estadias_on_cliente_id"
+    t.index ["usuario_id"], name: "index_estadias_on_usuario_id"
+    t.index ["vaga_id"], name: "index_estadias_on_vaga_id"
+    t.index ["veiculo_id"], name: "index_estadias_on_veiculo_id"
   end
 
   create_table "planos", force: :cascade do |t|
@@ -88,11 +81,12 @@ ActiveRecord::Schema.define(version: 20200529205959) do
   end
 
   create_table "usuarios", force: :cascade do |t|
-    t.integer "cargos_codcargo"
     t.string "nome"
     t.string "senha"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "cargo_id"
+    t.index ["cargo_id"], name: "index_usuarios_on_cargo_id"
   end
 
   create_table "vagas", force: :cascade do |t|
@@ -110,6 +104,8 @@ ActiveRecord::Schema.define(version: 20200529205959) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "tipo_veiculo_id"
+    t.integer "cliente_id"
+    t.index ["cliente_id"], name: "index_veiculos_on_cliente_id"
     t.index ["tipo_veiculo_id"], name: "index_veiculos_on_tipo_veiculo_id"
   end
 

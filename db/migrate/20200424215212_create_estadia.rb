@@ -1,6 +1,6 @@
 class CreateEstadia < ActiveRecord::Migration[5.1]
   def change
-    create_table :estadia do |t|
+    create_table :estadias do |t|
       t.integer :vagas_codvaga
       t.integer :loja_codestab
       t.integer :usuarios_id
