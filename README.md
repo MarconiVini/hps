@@ -69,5 +69,7 @@ git pull origin master --rebase
 git push origin master
 ```
 
-
+Caso não conseguir instalar via bundler por causa da gem 'pg'
+rodar o comando:
+sudo apt-get install libpq-dev
 

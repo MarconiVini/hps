@@ -1,1 +1,1 @@
-json.array! @estadia, partial: "estadia/estadia", as: :estadia
+json.array! @estadia, partial: "estadias/estadia", as: :estadia
