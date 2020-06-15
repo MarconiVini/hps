@@ -109,8 +109,8 @@ var estadias = [
         usuario:3,
         veiculo:1,
         cliente:1,
-        dataEntrada: 3,
-        dataSaida: 3,
+        dataEntrada: 4,
+        dataSaida: 4,
         valor: 4.23
      },
      {
@@ -243,49 +243,32 @@ var chart = new Chart(ctx, {
     }
 });
 
-var ctx = document.getElementsByClassName("bar-chart");
+var barchart = document.getElementsByClassName("bar-chart");
 
-var tipoVeiculos = ['AWD','FWD','4x4/4-wheel drive']
+fetch('<%= request.base_url %>/api/dashboard/usuarios-por-tipo')
+   .then(data => {return data.json()})
+   .then(tipoVeiculos => {
+      entries = Object.entries(tipoVeiculos)
+      let labels = []
+      let data = []
 
-var clientes = [
-   {
-      id:1,
-      tipoVeiculo:1
-   },
-   {
-      id:2,
-      tipoVeiculo:1
-   },
-   {
-      id:3,
-      tipoVeiculo:2
-   },
-   {
-      id:4,
-      tipoVeiculo:2
-   },
-   {
-      id:5,
-      tipoVeiculo:2
-   },
-   {
-      id:6,
-      tipoVeiculo:3
-   },
-]
+      entries.map(tipoVeic => {
+         labels.push(tipoVeic[0])
+         data.push(tipoVeic[1])
+      })
 
-var chart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: tipoVeiculos,
-        datasets: [{
-            label: 'Tipo Veículos',
-            data: [12,32,41],
-            borderColor: 'rgba(77,12,253,0.85)',
-        }]
-    }
-});
-
+      new Chart(barchart, {
+         type: 'bar',
+         data: {
+            labels: labels,
+            datasets: [{
+                  label: 'Tipo Veículos',
+                  data: data,
+                  borderColor: 'rgba(77,12,253,0.85)',
+            }]
+         }
+      });
+   })
 
 </script>
 
