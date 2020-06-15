@@ -69,6 +69,6 @@ class VeiculosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def veiculo_params
-      params.require(:veiculo).permit(:tipoveiculo_codtipoveiculo, :placa, :modelo, :marca, :cor)
+      params.require(:veiculo).permit(:tipoveiculo_codtipoveiculo, :placa, :modelo, :marca, :cor, :cliente_id)
     end
 end
