@@ -718,7 +718,6 @@ var navbar_initialized,
   backgroundOrange = false,
   toggle_initialized = false;
 
-var $datepicker = $('.datepicker');
 var $collapse = $('.navbar .collapse');
 var $html = $('html');
 var $tagsinput = $('.tagsinput');
