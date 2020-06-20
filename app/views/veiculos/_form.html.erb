@@ -1,88 +1,84 @@
 <div class="wrapper">
-<div class="section features-6">
-<div class="container">
+    <div class="section features-6">
+        <div class="container">
 
-<%= form_with(model: veiculo, local: true) do |form| %>
+            <%= form_with(model: veiculo, local: true) do |form| %>
 
-<% if veiculo.errors.any? %>
-<div id="error_explanation">
-<h2><%= pluralize(veiculo.errors.count, "error") %> prohibited this veiculo from being saved:</h2>
+            <% if veiculo.errors.any? %>
+            <div id="error_explanation">
+                <h2><%= pluralize(veiculo.errors.count, "error") %> prohibited this veiculo from being saved:</h2>
 
-<ul>
-<% veiculo.errors.full_messages.each do |message| %>
-  <li><%= message %></li>
-  <% end %>
-  </ul>
-  </div>
-  <% end %>
+                <ul>
+                    <% veiculo.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                    <% end %>
+                </ul>
+            </div>
+            <% end %>
 
-<form>
-<div class="row">
-<div class="col-md-6">
-<div class="form-group">
-Placa
-<%= form.text_field :placa, id: :veiculo_placa, class: 'form-control form-control-sm', placeholder: 'Ex: ABC1B34', required: true, type: 'text' %>
-</div>
-</div>
-<div class="col-md-6">
-<div class="form-group">
-Marca
-<%= form.text_field :marca, id: :veiculo_marca, class: 'form-control form-control-sm', required: true, type: 'text' %>
-</div>
-</div>
-</div>
-<div class="row">
-<div class="col-md-6">
-<div class="form-group">
-Modelo
-<%= form.text_field :modelo, id: :veiculo_modelo, class: 'form-control form-control-sm', required: true, type: 'text' %>
-</div>
-</div>
-<div class="col-md-6">
-<div class="form-group">
-Cor
-<%= form.text_field :cor, id: :veiculo_cor, class: 'form-control form-control-sm' %>
-</div>
-</div>
-</div>
-<div class="row">
-<div class="col-md-6">
-<div class="form-group">
-Cliente
-<%= form.text_field :cliente_id, id: :veiculo_clientes_codclie, class: 'form-control form-control-sm', required: true, type: 'text' %>
-</div>
-</div>
-<div class="col-md-6">
-<div class="form-group">
-Tipo Veiculo
-<%= form.text_field :tipo_veiculo, id: :veiculo_tipo_veiculo_codtipoveiculo, class: 'form-control form-control-sm' %>
-</div>
-</div>
-</div>
-<div class="row"><div class="col-md-3"></div>
-</div>
-<div class="row">
-</div>
-<div class="row">
-    <div class="col-md-6">
-    <div class="actions form-group">
-    <%= form.submit nil, class: 'btn btn-success' %>
-  
-    <a href="/veiculos" class="btn btn-secondary">Voltar</a>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        Placa
+                        <%= form.text_field :placa, id: :veiculo_placa, class: 'form-control form-control-sm', placeholder: 'Ex: ABC1B34', required: true, type: 'text' %>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        Marca
+                        <%= form.text_field :marca, id: :veiculo_marca, class: 'form-control form-control-sm', required: true, type: 'text' %>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        Modelo
+                        <%= form.text_field :modelo, id: :veiculo_modelo, class: 'form-control form-control-sm', required: true, type: 'text' %>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        Cor
+                        <%= form.text_field :cor, id: :veiculo_cor, class: 'form-control form-control-sm' %>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        Cliente
+                        <%= form.text_field :cliente_id, id: :veiculo_cliente_id, class: 'form-control form-control-sm', required: true, type: 'text' %>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        Tipo Veiculo
+                        <%= form.text_field :tipo_veiculo, id: :veiculo_tipo_veiculo_id, class: 'form-control form-control-sm' %>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+            </div>
+            <div class="row">
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="actions form-group">
+                        <%= form.submit nil, class: 'btn btn-success' %>
+
+                        <a href="/veiculos" class="btn btn-secondary">Voltar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
-  </div>
-  </div>
-    </div>
-
-    
-</form>
-
-
-</div>
 </div>
 <div class="section features-1">
-<div class="container">    
-</div>
+    <div class="container">
+    </div>
 </div>
 <br /><br />
 <% end %>

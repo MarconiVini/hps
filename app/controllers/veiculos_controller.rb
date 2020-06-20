@@ -64,11 +64,12 @@ class VeiculosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_veiculo
-      @veiculo = Veiculo.find(params[:id])
+      @veiculo = Veiculo.includes(:cliente, :tipo_veiculo).find(params[:id])
+      #binding.pry
     end
 
     # Only allow a list of trusted parameters through.
     def veiculo_params
-      params.require(:veiculo).permit(:tipoveiculo_codtipoveiculo, :placa, :modelo, :marca, :cor, :cliente_id)
+      params.require(:veiculo).permit(:placa, :modelo, :marca, :cor, :cliente_id)
     end
 end

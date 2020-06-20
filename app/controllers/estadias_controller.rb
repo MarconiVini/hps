@@ -4,11 +4,39 @@ class EstadiasController < ApplicationController
   # GET /estadia
   # GET /estadia.json
   def index
-    @estadia = Estadia.all
+    @estadia = Estadia.all.order(updated_at: :desc)
   end
 
   def dashboard
+  end
 
+  def finalizar
+    valor_default = 5.0
+    per_hour_value = 0.5
+    valor_total = 0
+
+    @estadia = Estadia.find(params[:estadia_id])
+
+    #vamos finalizar a estadia
+    @estadia.data_saida = Time.now
+    
+    #calculo de valor
+    #10 - 11:05 -> 2 hrs
+    sec_spent = @estadia.data_saida - @estadia.data_entrada 
+    full_hours_spent = (sec_spent/1.hour).to_i
+
+    if full_hours_spent == 0
+      valor_total = valor_default
+    else
+      valor_total = valor_default + (per_hour_value * full_hours_spent)
+    end
+
+    @estadia.valor = valor_total
+    respond_to do |format|
+      if @estadia.save
+        format.html { redirect_to @estadia, notice: "Estadia finalizada com sucesso. Cobrar: #{@estadia.valor}" }
+      end
+    end
   end
 
   # GET /estadia/1
@@ -29,6 +57,9 @@ class EstadiasController < ApplicationController
   # POST /estadia.json
   def create
     @estadia = Estadia.new(estadia_params)
+
+    #Quando cria uma estadia nova, seta a data como a hora corrente
+    @estadia.data_entrada = Time.now
 
     respond_to do |format|
       if @estadia.save

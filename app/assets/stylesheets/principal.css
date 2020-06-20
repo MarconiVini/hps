@@ -3,3 +3,10 @@
   background-color: #343a40;
   border-color: #454d55;
 }
+
+#notice {
+  color: red;
+  font-weight: 700;
+  text-align: center;
+  margin: 30px 0;
+}

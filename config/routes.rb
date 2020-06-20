@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
   resources :lojas
-  resources :estadias
+  resources :estadias do
+    get 'finalizar', to: 'estadias#finalizar'
+  end
   resources :cargos
   resources :usuarios
   resources :veiculos

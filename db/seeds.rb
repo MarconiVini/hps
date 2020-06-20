@@ -24,7 +24,14 @@ separators 'Criando Convenios'
 create_list(:convenio, 12)
 
 separators 'Criando Vagas'
-create_list(:vaga, 40)
+quadras = 'A'..'D'
+vagas_numero = 1..8
+
+quadras.each do |quadra|
+  vagas_numero.each do |vaga_numero|
+    create(:vaga, quadra: quadra, tipo: "#{quadra}#{vaga_numero}")
+  end
+end
 @vagas = Vaga.all
 @vagas_size = @vagas.size - 1
 
