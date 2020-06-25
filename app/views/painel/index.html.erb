@@ -1,0 +1,28 @@
+<div class="container">
+    <h1>
+        Painel de Vagas
+    </h1>
+
+    <img src="/assets/estacionamento.jpeg" alt="">
+
+    <h2>
+        Tabela de vagas
+    </h2>
+    <table class="table table-sm table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th>Tipo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @vagas.each do |vaga| %>
+            <%- ocupada = vaga.ocupada ? "table-danger" : "table-success"  %>
+            <tr class="<%= ocupada %>">
+                <th scope="row"><%= vaga.id %></th>
+                <td><%= vaga.tipo %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>

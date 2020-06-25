@@ -32,8 +32,11 @@ class EstadiasController < ApplicationController
     end
 
     @estadia.valor = valor_total
+    # desocupa a vaga
+    @estadia.vaga.ocupada = false
+
     respond_to do |format|
-      if @estadia.save
+      if @estadia.vaga.save && @estadia.save
         format.html { redirect_to @estadia, notice: "Estadia finalizada com sucesso. Cobrar: #{@estadia.valor}" }
       end
     end
@@ -60,9 +63,11 @@ class EstadiasController < ApplicationController
 
     #Quando cria uma estadia nova, seta a data como a hora corrente
     @estadia.data_entrada = Time.now
+    #ocupa a vaga
+    @estadia.vaga.ocupada = true
 
     respond_to do |format|
-      if @estadia.save
+      if @estadia.vaga.save && @estadia.save
         format.html { redirect_to @estadia, notice: 'Estadia was successfully created.' }
         format.json { render :show, status: :created, location: @estadia }
       else

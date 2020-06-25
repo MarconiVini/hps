@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :tipo_veiculos
   resources :planos
   resources :clientes
+  get 'painel-de-vagas', to: 'painel#index'
   get 'api/dashboard', to: 'dashboard#index'
   get 'api/dashboard/usuarios-por-tipo', to: 'dashboard#usuario_por_tipo'
   get 'dashboard/grafico', to: 'dashboard#grafico'

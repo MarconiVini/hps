@@ -23,7 +23,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         Código Vaga
-                        <%= form.collection_select :vaga_id, Vaga.all, :id, :full_name, {}, {class: 'form-control form-control-sm'} %>
+                        <%= form.collection_select :vaga_id, Vaga.desocupadas, :id, :full_name, {}, {class: 'form-control form-control-sm'} %>
                     </div>
                 </div>
             </div>

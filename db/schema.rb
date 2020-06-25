@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200531205822) do
+ActiveRecord::Schema.define(version: 20200625165241) do
 
   create_table "cargos", force: :cascade do |t|
     t.string "desc_cargo"
@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(version: 20200531205822) do
     t.string "tipo", limit: 200
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "ocupada"
   end
 
   create_table "veiculos", force: :cascade do |t|
